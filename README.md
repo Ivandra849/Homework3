@@ -1,3 +1,15 @@
-## Шаблон для третьего ДЗ по ИПР
-
-Условие дз доступно по [ссылке](https://github.com/Nikfilk2030/missing_semester_hse_cs/blob/main/2026/amcs/year_1/hw_3/README.md)
+1. На 4 балла: логи лежат в logs.txt
+2. На 6 баллов: переменные окружения по умолчанию лежат в .env.example(POST - порт приложения в контейнере, HOST_PORT - порт приложения на компьютере, GREETING - приветственное сообщение). Изменить переменные окружения можно в .env.
+Команды запуска(.env = .env.example)
+1)docker compose config - проверка концигурации compose
+2)docker compose up -d --build - сборка образа и запуск контейнера
+3)docker compose ps - проверка состояния контейнера
+4)curl http://127.0.0.1:8080/ - узнать значение счетчика(вместо 8080 подставить HOST_POST если он не 8080)
+{"greeting": "Hello, Compose!", "count": 0, "hostname": "8ebb05de605f", "storage": "sqlite"}[ble: EOF] 
+5)curl -X POST http://127.0.0.1:8080/increment - увеличить счетчик на 1
+{"greeting": "Hello, Compose!", "count": 1, "hostname": "8ebb05de605f", "storage": "sqlite"}[ble: EOF]
+6)docker compose down - удаление контейнера
+7)docker compose up -d - создаем контейнер заново
+8) curl http://127.0.0.1:8080/ - проверка значения счетчика
+{"greeting": "Hello, Compose!", "count": 1, "hostname": "24086a29a7cf", "storage": "sqlite"}[ble: EOF]
+3. 
